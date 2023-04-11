@@ -4,3 +4,9 @@ export type product = {
 	price: number;
 	amount: number;
 }
+
+export type ApplicationError = {
+	name: string;
+	message: string;
+	statusCode: number;
+}
