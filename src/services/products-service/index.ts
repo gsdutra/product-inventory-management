@@ -8,7 +8,7 @@ async function getProductById(id: string) {
 	
 }
 
-async function createProduct(id: string, body: product) {
+async function createProduct(body: product) {
 	
 }
 
