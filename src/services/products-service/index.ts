@@ -1,8 +1,4 @@
-type product = {
-	name: string;
-	price: number;
-	amount: number;
-}
+import { product } from '@/protocols'
 
 async function getAllProducts() {
 	
