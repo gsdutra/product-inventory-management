@@ -3,12 +3,12 @@ import prisma from '../database/database.connection';
 import {product} from '@/protocols';
 
 async function findAll(): Promise<product[]> {
-  const result = await prisma.products.findMany();
+  const result = await prisma.product.findMany();
   return result;
 }
 
 async function findById(id: number): Promise<product> {
-  const result = await prisma.products.findUnique({
+  const result = await prisma.product.findUnique({
 	where: {
 	  id,
 	},
@@ -16,15 +16,15 @@ async function findById(id: number): Promise<product> {
   return result;
 }
 
-async function create(product: product): Promise<product> {
-  const result = await prisma.products.create({
-	data: product,
-  });
-  return result;
-}
+// async function create(product: product): Promise<product> {
+//   // const result = await prisma.product.create({
+// 	// data: product,
+//   // });
+//   // return result;
+// }
 
 async function deleteById(id: number): Promise<product> {
-  const result = await prisma.products.delete({
+  const result = await prisma.product.delete({
 	where: {
 	  id,
 	},
@@ -32,13 +32,13 @@ async function deleteById(id: number): Promise<product> {
   return result;
 }
 
-async function upsert(id: number, product: product): Promise<product> {
-  const result = await prisma.products.upsert({
-	where: {
-	  id,
-	},
-	update: product as product,
-	create: product as product,
-  });
-  return result;
-}
+// async function upsert(id: number, product: product): Promise<product> {
+//   // const result = await prisma.product.upsert({
+// 	// where: {
+// 	//   id,
+// 	// },
+// 	// update: product as product,
+// 	// create: product as product,
+//   // });
+//   // return result;
+// }
