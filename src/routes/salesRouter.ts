@@ -1,5 +1,5 @@
 import express from 'express'
-import { createSale } from '@/controllers/salesController'
+import { createSale } from '../controllers/salesController'
 
 const salesRouter = express.Router()
 
