@@ -5,9 +5,6 @@ export async function getStock(id: number){
 	return prisma.product.findUnique({
 		where: {
 			id
-		},
-		select: {
-			amount: true
 		}
 	})
 }
@@ -23,6 +20,12 @@ export async function setNewStock(id: number, newAmount: number) {
 	})
 }
 
-export async function createOne(productId: number, amount: number) {
-	//implement later
+export async function createOne(productId: number, amount: number, priceOnSale: number) {
+	return prisma.sale.create({
+		data: {
+			productId,
+			amount,
+			priceOnSale
+		}
+	})
 }
