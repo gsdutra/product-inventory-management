@@ -1,8 +1,8 @@
 export type product = {
-	id?: number;
 	name: string;
 	price: number;
 	amount: number;
+	categoryId: number;
 }
 
 export type ApplicationError = {
