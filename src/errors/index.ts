@@ -8,6 +8,14 @@ export function categoryAlreadyExists(): ApplicationError {
 	};
 }
 
+export function insufficientStock(): ApplicationError {
+	return {
+		name: "InsufficientStock",
+		message: "Insufficient stock for this item",
+		statusCode: 400,
+	};
+}
+
 export function productAlreadyExists(): ApplicationError {
 	return {
 		name: "ProductAlreadyExists",
