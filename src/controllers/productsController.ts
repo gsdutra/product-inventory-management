@@ -1,5 +1,5 @@
 import {Request, Response } from 'express';
-import productsService from '../services/products-service';
+import * as productsService from '../services/productsService';
 import {product} from '@/protocols'
 
 export async function getAllProducts(req: Request, res: Response) {

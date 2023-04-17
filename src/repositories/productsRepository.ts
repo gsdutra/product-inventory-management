@@ -2,12 +2,12 @@
 import prisma from '../database/database.connection';
 import { Product } from '@prisma/client';
 
-async function findAll(): Promise<Product[]> {
+export async function findAll(): Promise<Product[]> {
   const result = await prisma.product.findMany();
   return result;
 }
 
-async function findById(id: number): Promise<Product> {
+export async function findById(id: number): Promise<Product> {
   const result = await prisma.product.findUnique({
 	where: {
 	  id,
@@ -16,14 +16,14 @@ async function findById(id: number): Promise<Product> {
   return result;
 }
 
-// async function create(product: product): Promise<product> {
+// export async function create(product: product): Promise<product> {
 //   // const result = await prisma.product.create({
 // 	// data: product,
 //   // });
 //   // return result;
 // }
 
-async function deleteById(id: number): Promise<Product> {
+export async function deleteById(id: number): Promise<Product> {
   const result = await prisma.product.delete({
 	where: {
 	  id,
@@ -32,7 +32,7 @@ async function deleteById(id: number): Promise<Product> {
   return result;
 }
 
-// async function upsert(id: number, product: product): Promise<product> {
+// export async function upsert(id: number, product: product): Promise<product> {
 //   // const result = await prisma.product.upsert({
 // 	// where: {
 // 	//   id,
