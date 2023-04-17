@@ -1,13 +1,13 @@
 // import {QueryResult} from 'pg';
 import prisma from '../database/database.connection';
-import {product} from '@/protocols';
+import { Product } from '@prisma/client';
 
-async function findAll(): Promise<product[]> {
+async function findAll(): Promise<Product[]> {
   const result = await prisma.product.findMany();
   return result;
 }
 
-async function findById(id: number): Promise<product> {
+async function findById(id: number): Promise<Product> {
   const result = await prisma.product.findUnique({
 	where: {
 	  id,
@@ -23,7 +23,7 @@ async function findById(id: number): Promise<product> {
 //   // return result;
 // }
 
-async function deleteById(id: number): Promise<product> {
+async function deleteById(id: number): Promise<Product> {
   const result = await prisma.product.delete({
 	where: {
 	  id,
